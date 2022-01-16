@@ -64,8 +64,8 @@ app.use(function (err, req, res, next) {
 
 const server = http.createServer(app);
 
-server.listen(4000, () => {
-  console.log("Listening on 4000");
+server.listen(process.env.PORT || 4000, () => {
+  console.log(`Listening on ${process.env.PORT || 4000}`);
 });
 const io = new Server(server, {
   cors: {
